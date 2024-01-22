@@ -1,7 +1,51 @@
-# Overview:
+# Overview: Reinforcement Learning in Grid World Environment
 
-Defined a reinforcement learning environment based on a grid-world Markov decision process. The "GridWorldEnv" environment included states, actions, rewards, and a main objective. The environment was structured to simulate a lawn mower grid world with positive rewards (chargers) and negative rewards (stones and garbage). The goal was for the agent to reach the destination state with the maximum reward. Safety in AI was ensured by defining action and observation spaces and implementing boundaries for agent movements.
+This repository contains an implementation and analysis of reinforcement learning algorithms in a grid world environment. The goal of this project is to provide insights into how SARSA and Q-learning algorithms perform in a defined environment and to optimize hyperparameters for efficient learning.
 
-In the next part, SARSA and Q-learning algorithms are applied to solve the defined environment. These tabular methods were used to learn and optimize the agent's policy. Hyperparameter tuning was performed to find the most efficient values for parameters such as the discount factor, epsilon, and epsilon decay rate. Results were analyzed, and reward graphs were provided for each algorithm. The performance of SARSA and Q-learning was compared, highlighting their advantages and disadvantages.
+## Environment Description
 
-Additionally, implemented a 2-step bootstrapping SARSA and compared the results with traditional SARSA.
+The environment, referred to as 'GridWorldEnv,' is a 5x5 grid world with the following characteristics:
+- Starting point, goal point, and various rewards (chargers, mega chargers) and obstacles (stones, garbage).
+- Agent can move in four directions: up, down, right, left.
+- States represent the agent's location in the grid world, and actions represent movement directions.
+- The objective is to reach the goal state while avoiding obstacles, with specific rewards and penalties.
+
+## Tabular Methods
+
+Implemented three tabular methods for reinforcement learning: SARSA, Q-learning, and N-step SARSA. Here's a brief overview of each:
+- SARSA: On-policy algorithm, estimating the optimal policy and action-value function.
+- Q-learning: Off-policy algorithm, estimating the optimal action-value function.
+- N-step SARSA: Extension of SARSA, updating multiple state-action pairs.
+
+## Results
+
+Evaluated the performance of SARSA and Q-learning in the environment and present key findings:
+- SARSA: Lower epsilon values lead to higher rewards.
+- Q-learning: Total rewards per episode increase over time.
+
+## Comparison of Algorithms
+
+Comparing SARSA and Q-learning:
+- Q-learning reaches higher initial rewards but is less stable.
+- SARSA is more stable and suitable for maximizing cumulative rewards.
+
+## Hyperparameter Tuning
+
+Conducted hyperparameter tuning for both algorithms. Here are the findings:
+- SARSA: Higher discount factors improve reward collection.
+- SARSA: Epsilon values didn't show significant changes.
+- SARSA: Smaller epsilon decay rates are better for learning.
+- Q-learning: Similar trends in hyperparameter tuning as SARSA.
+
+## Suggested Hyperparameters
+
+Based on the analysis, the following hyperparameters are suggested for efficient learning:
+- SARSA: Use a higher discount factor.
+- SARSA: Epsilon values can be kept consistent.
+- SARSA: Use a smaller epsilon decay rate.
+- Q-learning: Similar suggestions as SARSA.
+
+Feel free to explore the code and experiment with different hyperparameters in your own grid world environments.
+
+For more details, refer to the full report in the 'Report' directory.
+
